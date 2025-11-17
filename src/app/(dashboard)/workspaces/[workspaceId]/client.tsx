@@ -85,7 +85,7 @@ export const TaskList = ({ data, total }: TaskListProps) => {
                                     <CardContent className="p-4">
                                         <p className="text-lg font-medium truncate">{task.name}</p>
                                         <div className="flex items-center gap-x-2">
-                                            <p>{task.project?.name}</p>
+                                            <p>{task.projectId}</p>
                                             <div className="size-1 rounded-full bg-neutral-200" />
                                             <div className="text-sm text-muted-foreground flex items-center">
                                                 <CalendarIcon className="size-3 mr-1" />
