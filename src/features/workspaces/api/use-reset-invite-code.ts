@@ -16,17 +16,17 @@ export const useResetInviteCode = () => {
         mutationFn: async ({ param }) => {
             const response = await client.api.workspaces[":workspaceId"]["reset-invite-code"]["$post"]({ param });
             if (!response.ok) {
-                throw new Error("Failed to reset invite code")
+                throw new Error("Failed to reset invite code");
             }
             return await response.json();
         },
         onSuccess: ({ data }) => {
-            toast.success("Invite code reset")
+            toast.success("Invite code reset");
             queryClient.invalidateQueries({ queryKey: ["workspaces"] });
             queryClient.invalidateQueries({ queryKey: ["workspace", data.$id] });
         },
         onError: () => {
-            toast.error("Failed to invite reset code")
+            toast.error("Failed to invite reset code");
         }
     })
     return mutation;

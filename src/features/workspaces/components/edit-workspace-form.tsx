@@ -3,9 +3,7 @@
 import { z } from "zod"
 import { useRef } from "react"
 import { useForm } from "react-hook-form"
-import Image from "next/image"
 import { toast } from "sonner"
-import { createWorkspaceSchema } from "../schemas"
 import { DottedSeparator } from "@/components/dotted-separator"
 import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -93,10 +91,6 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceProp
 
         resetInviteCode({
             param: { workspaceId: initialValues.$id }
-        }, {
-            onSuccess: () => {
-                router.refresh();
-            }
         })
     }
 
@@ -109,11 +103,6 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceProp
         mutate({
             form: finalValues,
             param: { workspaceId: initialValues.$id }
-        }, {
-            onSuccess: ({ data }) => {
-                form.reset();
-                router.push(`/workspaces/${data.$id}`)
-            }
         });
     }
 

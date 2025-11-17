@@ -24,6 +24,7 @@ import {
 import Link from "next/link";
 import { loginSchema } from "../schemas";
 import { useLogin } from "@/features/auth/api/use-login";
+import { signUpWithGithub } from "@/lib/oauth";
 
 
 export const SignInCard = () => {
@@ -108,6 +109,7 @@ export const SignInCard = () => {
                     Login with google
                 </Button>
                 <Button
+                    onClick={() => signUpWithGithub()}
                     variant="secondary"
                     size="lg"
                     className="w-full"

@@ -30,7 +30,7 @@ export const MemberAvatar = ({
             "size-10 relative rounded-md overflow-hidden",
             className
         )}>
-            <AvatarFallback className="text-white bg-amber-600 font-semibold text-lg uppercase">
+            <AvatarFallback className="text-white bg-neutral-300 font-semibold text-lg uppercase">
                 {name.charAt(0).toUpperCase()}
             </AvatarFallback>
         </Avatar>
