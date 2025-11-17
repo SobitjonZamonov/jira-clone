@@ -36,8 +36,6 @@ interface CreateTaskFormProps {
     memberOptions: { id: string, name: string }[]
 }
 
-const createTaskFormSchema = createTaskSchema.omit({ workspaceId: true });
-
 export const CreateTaskForm = ({ onCancel, projectOptions, memberOptions }: CreateTaskFormProps) => {
     const workspaceId = useWorkspaceId()
     const { mutate, isPending } = useCreateTask();
@@ -56,7 +54,7 @@ export const CreateTaskForm = ({ onCancel, projectOptions, memberOptions }: Crea
     });
 
 
-    const onSubmit = (values: z.infer<typeof createTaskFormSchema>) => {
+    const onSubmit = (values: z.infer<typeof createTaskSchema>) => {
         mutate({ json: { ...values, workspaceId } }, {
             onSuccess: () => {
                 form.reset()

@@ -11,7 +11,6 @@ interface AnalyticsCardProps {
 
 export const AnalyticsCard = ({
     title,
-    value,
     variant,
     increaseValue
 }: AnalyticsCardProps) => {
