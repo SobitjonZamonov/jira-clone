@@ -1,7 +1,7 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { Task } from "../types";
+import { Task, TaskWithRelations } from "../types";
 import { ArrowUpDown, MoreVertical } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { snakeCaseToTitleCase } from "@/lib/utils";
 import { TaskActions } from "./task-actions";
 
-export const columns: ColumnDef<Task>[] = [
+export const columns: ColumnDef<TaskWithRelations>[] = [
     {
         accessorKey: "name",
         header: ({ column }) => {

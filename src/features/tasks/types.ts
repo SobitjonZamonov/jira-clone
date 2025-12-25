@@ -17,4 +17,15 @@ export type Task = Models.Document & {
     projectId: string;
     position: number;
     dueDate: string;
-}
+};
+
+export type TaskWithRelations = Task & {
+    project: {
+        $id: string;
+        name: string;
+    };
+    assignee: {
+        $id: string;
+        name: string;
+    };
+};
